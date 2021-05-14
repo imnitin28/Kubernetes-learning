@@ -1,0 +1,23 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: new-pod
+  labels:
+    app: web
+spec:
+  containers:
+    - name: foss-web
+      image: imnitin28/fossimage:1.0
+      ports:
+        - containerPort: 8080
+
+  #Consider the foss-web requires apache and mysql for proper functioning.
+  initContainers:
+  - name: init-myservice
+    image: httpd:latest
+    command: ['sh', '-c', "until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
+  - name: init-mydb
+    image: mysql:latest
+    command: ['sh', '-c', "until nslookup mydb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
+

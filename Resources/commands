@@ -1,0 +1,28 @@
+					kubectl help
+
+ 2078  minikube status
+ 2079  kubectl proxy
+ 2080  kubectl get all
+ 2081  kubectl get all -n kubesystem
+ 2082  kubectl get all -n kube-system
+ 2083  minikube ssh
+ 2084  minikube ssh /var/lib/minikube/binaries/v1.20.2/kubelet
+ 2085  minikube ssh
+ 2086  history
+ 2087  minikube ssh
+ 2088  kubectl get all -n kube-syste
+ 2089  kubectl get all -n kube-system
+ 2090  kubectl get po
+ 2091  kubectl delete po hello-pod
+ 2092  kubectl get po
+ 2093  kubectl get sbc
+ 2094  kubectl get svc
+ 2095  ls
+ 2096  kubectl delete -f pod.yml
+ 2097  minikube status
+ 2098  mkdir test
+ 2099  vi test/file.yml
+ 2100  history
+ 2101  kubectl describe pods
+       kubectl apply -f pod.yml
+       

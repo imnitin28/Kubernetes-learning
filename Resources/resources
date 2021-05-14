@@ -1,0 +1,86 @@
+Kubernetes
+
+https://blog.knoldus.com/overview-of-kubernetes-architecture/
+https://blog.knoldus.com/introduction-to-google-kubernetes/
+https://blog.knoldus.com/kubernetes-v-s-docker-swarm/
+
+Resources
+
+# Getting Started #### 
+Focus: To get a high-level outline of Kubernetes. 
+## Why Kubernetes ? 
+*Just watch this videos, nothing to worry if you dont understand it all. Try to focus on WHY we should use K8s and not HOW (aleast not at this moment).
+* ### What Professional says?
+ 
+- https://www.youtube.com/watch?v=aSrqRSk43lY
+ 
+- https://www.youtube.com/watch?v=PH-2FfFD2PU
+
+### Hear from this guy as well 
+
+- https://www.youtube.com/watch?v=7bA0gTroJjw 
+
+### Lets explore the PAST 
+- https://www.youtube.com/watch?v=MPpU8y3ykS4&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=2 
+
+- https://www.youtube.com/watch?v=MPpU8y3ykS4&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=3 
+
+### Lets revisit containers 
+- https://www.youtube.com/watch?v=0aNdTsNdA8E&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=4
+
+### Lets compare now - https://www.youtube.com/watch?v=0aNdTsNdA8E&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=5 
+
+## What is Container Orchestration? 
+- https://www.vmware.com/topics/glossary/content/container-orchestration 
+
+- https://www.redhat.com/en/topics/containers/what-is-container-orchestration
+ 
+- https://www.youtube.com/watch?v=0aNdTsNdA8E&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=7
+ 
+- https://www.youtube.com/watch?v=LWq7dg3Yb40&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=9
+ 
+**Now as you have the basic idea, lets hit the offical docs: Understanding Kubernetes' Origin and get an overview** 
+
+- https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+ 
+
+**Worth taking a look : Kubernetes The Big Picture[1000-Feet Above]** 
+
+- https://www.infoworld.com/article/3173266/4-reasons-you-should-use-kubernetes.html
+
+
+                                            # Kubernetes Architecture
+#### Focus: To understand architectural concepts behind Kubernetes.
+
+### Links:
+ - https://www.redhat.com/en/topics/containers/kubernetes-architecture
+ - https://kubernetes.io/docs/concepts/overview/components
+ - https://kubernetes.io/docs/concepts/architecture/
+
+## How do they all work together?
+ - https://thenewstack.io/how-does-kubernetes-work/
+ - https://sensu.io/blog/how-kubernetes-works
+
+### Video Time (Let's recap and understand more)
+ - https://www.youtube.com/watch?v=_3NUI5vasPk&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=10
+ 
+
+
+# Setting Up the Environment
+#### Focus: HOW and WHERE to date Kubernetes
+
+### Video First
+ - https://www.youtube.com/watch?v=HwVELhvL8uA&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=11
+
+*Now don't go further by video and try to explore and install yourself.*
+
+## HOW part
+### What is Kubectl
+ - Installing Kubectl
+ 	- https://kubernetes.io/docs/tasks/tools/install-kubectl/
+ - kubectl commands to check the cluster health
+ - explore various sub commands 
+ - video
+ 	- https://www.youtube.com/watch?v=5jo6gNGcs3s&list=PLMPZQTftRCS8Pp4wiiUruly5ODScvAwcQ&index=12
+
+#### Explore K8s dashboards yourself and let me know for resources(that will be fun). 

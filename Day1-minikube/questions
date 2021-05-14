@@ -1,0 +1,87 @@
+Day 1 - K8s
+
+1. What is Scaling and what are the various types?
+2. What kind of scaling K8s uses?
+3. What does container orchestration mean?
+4. Where does monitoring of application go? How to do app monitoring?
+5. How logging and metrices play important role?
+6. What is canary deployment?
+7. What does downtime mean?
+8. How K8s manages downtime? How it helps to reduce that?
+9. Can we run jar in cluster?
+10.Disadvantage of K8s.
+11.How K8 better than Docker swarm?
+12.What is container orchestration?
+13.Where app is deployed using K8s.
+14.What is distributed systema and distributed system.
+15.Why it is called/named orchestration.
+16.How to inspect minikube?
+17.How minikube runs?
+
+Day 2 - K8s
+
+1. different ways to interact with kubernetes server
+
+2. cache and config in .kube
+
+3. kubectl api-resources list all resources or only running ones?
+
+Use "kubectl api-resources" for a complete list of supported resources.
+
+4. what are resources?
+kubectl api-resources
+replicaset, storage, volume attatchment, Pods, etc.
+
+5. whats is true/false in namespaces in kubectl api-resources?
+
+6. master node vs control plane
+Control plane is another name for apiserver. Since it is the entry point to master node and it controls everything.
+
+7. how many master node if we have n nodes? how do we calculate this?
+8. how many control managers and their tasks?
+
+9. how control managers communicates with etcd?
+   
+10.scheduling policies: https://kubernetes.io/docs/reference/scheduling/policies/
+11.Check out this channel: https://www.youtube.com/channel/UC6VkhPuCCwR_kG0GExjoozg
+12.who makes pods?
+13.lifecycle from yml creation to pods creation
+
+yaml -> apiserver -> cluster store(etcd) | scheduler (that does the work) | controller(which prforms watch loop).
+
+14.controller listens on its own or api server informs it? (apt server informs it)
+
+15.kube proxy (networking brain of node)
+16.etcd encrypts data or not?
+17.can we work without scheduler? can we use custom scheduler?
+18.is it required to have kubelet on master? (No. unless untill we are running containers in master).
+19.what if api server goes down and our master and worker are unable to communicate?
+20.explore master node and worker node on minikube.
+
+Day 3 - Architecture
+
+1. Can master have kubelet, kube-proxy, container runtime
+2. Can the api be https/api server listens on http  or https?
+3. Tasks of api servers
+4. Api endpoints
+5. Types of controllers
+6. Custom scheduler
+7. How scheduler schedule
+8. What happens when api server goes down
+change/update yaml file declaration.
+
+9. How does it check feasibility and scoring
+10.How the communication happens between the kubelet and api server.
+11.Why run kubelet on master node / Task of kubelet on master node?
+12.Explore kubelet in detail.
+
+13.Containerd overview.
+containerd is available as a daemon for Linux and Windows.
+It manages the complete container lifecycle of its host system,
+from image transfer and storage to container execution and supervision 
+to low-level storage to network attachments and beyond.
+
+14.How kubelet run as a service or process
+15.How kubelet communicate with CRI
+16.Task of kube proxy
+17.Every pod gets its own IP is a responsibility of kube proxy or not
