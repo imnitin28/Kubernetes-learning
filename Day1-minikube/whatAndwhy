@@ -1,2 +1,9 @@
+1. Why not Docker for managing Containers?
+
+In Docker we have to manually deploy and manage containers but K8s does self deployment and self healing.
+K8s provides better Scaling.
+K8s maintains desired state always.
+K8s does good load balancing and it distributes traffic.
+
 K8s is an orchestration tool allowing us to run and manage our container based workload.
 

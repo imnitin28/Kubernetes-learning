@@ -1,0 +1,11 @@
+Master Node
+    - api-server
+    - etcd
+    - controller
+    - scheduler
+
+Worker Node
+    - kubelet
+    - Container manager
+    - kube-proxy
+    
