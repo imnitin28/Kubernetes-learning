@@ -1,13 +1,25 @@
-
+# defines the version number which this K8s object belong to.
+# alpha --> beta --> stable release
 apiVersion: v1
+# the kind of object we want to create.
+# othe objects -> |service|deployement|Job|Daemon Set|Replication Controller etc.
 kind: Pod
+# Information about K8s object we are creating.
+# three fields - 
+# | name -> name of object we are creating 
+# | labels -> Just as tags. useful when many Pods running in cluster.
+# | Annotation -> 
+
 metadata:
   name: welcome-pod
   labels:
     app: web
+
+# Spec is for providing Container Configuration.
 spec:
   containers:
     - name: foss-web
       image: imnitin28/fossimage:1.0
       ports:
         - containerPort: 8080
+

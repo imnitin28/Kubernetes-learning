@@ -1,5 +1,7 @@
 					kubectl help
 
+ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+ 
  2078  minikube status
  2079  kubectl proxy
  2080  kubectl get all
@@ -25,4 +27,7 @@
  2100  history
  2101  kubectl describe pods
        kubectl apply -f pod.yml
-       
+
+       kubectl run demo --image=nginx
+       kubectl get po demo -o yaml
+      

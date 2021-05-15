@@ -1,0 +1,8 @@
+Pods are smallest deployable unit.
+Pod is a group of one or more container with shared resources.
+
+Shared context of a Pod is a set of Linux namespaces, cgroups,
+ and potantially other facets of isolation- same things that 
+ isolate Docker containers.
+
+ 

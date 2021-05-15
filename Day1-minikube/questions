@@ -62,8 +62,22 @@ Day 3 - Architecture
 
 1. Can master have kubelet, kube-proxy, container runtime
 2. Can the api be https/api server listens on http  or https?
+https
+
 3. Tasks of api servers
+entry point for aanything.
+converts yml to json
+passes manifest file to etcd.
+talks with scheduler.
+talks with controller.
+talks with kubectl.
+
 4. Api endpoints
+
+/this-is-an-endpoint
+and when put under a domain, it would look like:
+https://example.com/this-is-an-endpoint
+
 5. Types of controllers
 6. Custom scheduler
 7. How scheduler schedule
@@ -72,16 +86,37 @@ change/update yaml file declaration.
 
 9. How does it check feasibility and scoring
 10.How the communication happens between the kubelet and api server.
+
 11.Why run kubelet on master node / Task of kubelet on master node?
+In some cases(although not recommended) Pod runs on master node. In that scenario kubelet does that 
+work.
+
 12.Explore kubelet in detail.
 
 13.Containerd overview.
-containerd is available as a daemon for Linux and Windows.
++ containerd is available as a daemon for Linux and Windows.
 It manages the complete container lifecycle of its host system,
 from image transfer and storage to container execution and supervision 
 to low-level storage to network attachments and beyond.
 
 14.How kubelet run as a service or process
++As a service.
+ minikube logs | grep kubelet
+
 15.How kubelet communicate with CRI
+
++ Container Runtime Interface (CRI) -- a plugin interface which enables kubelet to use a wide variety 
+of container runtimes, without the need to recompile. CRI consists of a protocol buffers and gRPC API, 
+and libraries, with additional specifications and tools under active development. 
+CRI is being released as Alpha in Kubernetes 1.5.
+
+# + # Kubelet communicates with the container runtime (or a CRI shim for the runtime) over Unix sockets 
+using the gRPC framework, where kubelet acts as a client and the CRI shim as the server.
+
+
 16.Task of kube proxy
++It maintains the network rules.
++does some sort of filtering to manage traffic.
+
 17.Every pod gets its own IP is a responsibility of kube proxy or not
+No. It's the responsibility of CNI - Container network Interface
