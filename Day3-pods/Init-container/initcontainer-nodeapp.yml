@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: foss-app-with-sidecar
+  name: foss-app-with-init
   labels:
     app: web
 
@@ -20,8 +20,3 @@ spec:
       image: imnitin28/fossimage:1.0
       ports:
         - containerPort: 8080
-
-    - image: busybox
-      command: ["/bin/sh"]
-      args: ["-c", "while true; do echo echo $(ifconfig) 'Hi I am from Sidecar container' >> /var/log/index.html; sleep 5;done"]
-      name: sidecar-container
