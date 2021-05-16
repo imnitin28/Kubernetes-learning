@@ -1,1 +1,0 @@
-kubectl exec -ti foss-app-with-sidecar -c sidecar-container /bin/bash

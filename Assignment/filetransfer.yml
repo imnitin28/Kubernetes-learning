@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: file-transfer
+spec:
+  containers:
+  - name: create
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello > index.txt; sleep 10;done"]
+  
+  - name: read
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do cat index.txt;sleep 5;done"]
