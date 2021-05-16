@@ -1,0 +1,25 @@
+# kubectl run nginx --image=nginx --dry-run=client -o yaml
+# taken yaml code from here
+# minikube ssh
+# cd /etc/kubernetes/manifests
+# vi static-nginx.yml
+# put yaml code taken from nginx image
+# run sudo systemctl restart kubelet
+# exit from here
+# kubectl get pods --all-namespaces
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

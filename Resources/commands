@@ -113,3 +113,5 @@ docker@minikube:/etc/kubernetes/manifests$ ls
 etcd.yaml  kube-apiserver.yaml           kube-scheduler.yaml
 file.yml   kube-controller-manager.yaml
 
+exec to pod 
+kubectl exec -ti foss-app-with-sidecar -c sidecar-container bin/sh

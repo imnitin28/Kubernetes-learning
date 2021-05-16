@@ -16,11 +16,12 @@ metadata:
   labels:
     app: web
 
-# Spec is for providing Container Configuration.
+# Spec is for providing Container specification.
 spec:
   containers:
     - name: foss-web
       image: imnitin28/fossimage:1.0
       ports:
         - containerPort: 8080
+  restartPolicy: Always
 

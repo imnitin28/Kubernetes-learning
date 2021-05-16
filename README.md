@@ -13,7 +13,7 @@ minikube intoduction & setup
 
 ## How to run
 
-# pod.yml
+### pod.yml
 make sure minikube is running -> if not run "minikube start"
 then run **"kubectl apply -f pod.yml"**
 to check status **"kubectl get po welcom-pod"**
@@ -22,8 +22,11 @@ to delete the pod **"kubectl delete po welcome-pod"**
 
 # initcontainer-nodeapp.yml
 kubectl apply -f initcontainer-nodeapp.yml
+
 kubectl get po foss-app-with-init
+
 kubectl describe po foss-app-with-init
+
 kubectl delete -f initcontainer-nodeapp.yml
 
 

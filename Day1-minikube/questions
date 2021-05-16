@@ -58,7 +58,7 @@ yaml -> apiserver -> cluster store(etcd) | scheduler (that does the work) | cont
 19.what if api server goes down and our master and worker are unable to communicate?
 20.explore master node and worker node on minikube.
 
-Day 3 - Architecture
+## Day 3 - Architecture
 
 1. Can master have kubelet, kube-proxy, container runtime
 2. Can the api be https/api server listens on http  or https?
@@ -120,3 +120,15 @@ using the gRPC framework, where kubelet acts as a client and the CRI shim as the
 
 17.Every pod gets its own IP is a responsibility of kube proxy or not
 No. It's the responsibility of CNI - Container network Interface
+
+## Day 4 - Pods
+1. What are the various restartPolicy and what's the difference between Always and OnFailure?
+https://stackoverflow.com/questions/40530946/what-is-the-difference-between-always-and-on-failure-for-kubernetes-restart-poli
+
+Always means that the container will be restarted even if it exited with a zero exit code (i.e. successfully). This is useful when you don't care why the container exited, you just want to make sure that it is always running (e.g. a web server). This is the default.
+
+OnFailure means that the container will only be restarted if it exited with a non-zero exit code (i.e. something went wrong). This is useful when you want accomplish a certain task with the pod, and ensure that it completes successfully - if it doesn't it will be restarted until it does.
+
+Never means that the container will not be restarted regardless of why it exited. 
+
+2. 

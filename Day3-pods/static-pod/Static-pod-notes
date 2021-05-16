@@ -1,0 +1,24 @@
+Pods which are created directly by kubelet and not managed by api-server.
+Although once created it can be seen by api-server just as a mirror object but can't be managed.
+
+kubeadm actually uses static-pod to deploy K8s control plane. That is because kubeadm is setting up the
+cluster and api-server is not available to it. That's why it deploys all k8s control plane as static pod.
+
+All static pods can be found at 
+minikube ssh
+docker@minikube:/etc/kubernetes/manifests
+etcd.yaml  kube-apiserver.yaml   kube-scheduler.yaml
+kube-controller-manager.yaml
+
+Above are main control plane objects.
+
+-- How to deploy our Static pod.
+
+kubectl run nginx --image=nginx --dry-run=client -o yaml
+--copy the yaml
+minikube ssh
+cd /etc/kubernetes/manifests/
+sudo touch static-nginx.yml
+chmod 777 static-nginx.yml
+vi static-nginx.yml 
+--paste the nginx copied yaml

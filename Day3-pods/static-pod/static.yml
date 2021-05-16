@@ -1,0 +1,18 @@
+# minikube ssh
+# cd /etc/kubernetes/manifests
+# vi static.yml
+# run sudo systemctl restart kubelet
+# exit from here
+# kubectl get pods --all-namespaces
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+  restartPolicy: Always
