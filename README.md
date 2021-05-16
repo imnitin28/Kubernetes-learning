@@ -15,10 +15,10 @@ minikube intoduction & setup
 
 # pod.yml
 make sure minikube is running -> if not run "minikube start"
-then run "kubectl apply -f pod.yml"
-to check status "kubectl get po welcom-pod"
-to get detailed info "kubectl describe po welcome-pod"
-to delete the pod "kubectl delete po welcome-pod"
+then run **"kubectl apply -f pod.yml"**
+to check status **"kubectl get po welcom-pod"**
+to get detailed info **"kubectl describe po welcome-pod"**
+to delete the pod **"kubectl delete po welcome-pod"**
 
 # initcontainer-nodeapp.yml
 kubectl apply -f initcontainer-nodeapp.yml
