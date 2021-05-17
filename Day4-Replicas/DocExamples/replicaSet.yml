@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend # name of replica set
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    # use match label when wehave some key and only one value
+    matchLabels:
+      tier: frontend
+    # app: sample
+    # # use match expression when we have multiple values to select.
+    # matchExpressions:
+    #  - {key: tier, operator: In, values: [frontend]}
+  template:
+    metadata:
+      labels:
+        # app: sample
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
