@@ -4,6 +4,8 @@ metadata:
   name: nginx-deploy
   labels:
     app: nginx-app
+  annotations:
+    imageregistry: "https://hub.docker.com/"
 spec:
   replicas: 3
   selector:
@@ -14,8 +16,14 @@ spec:
       labels:
         app: nginx-app
     spec:
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 1
+        maxSurge: 2
       containers:
       - name: nginx-container
         image: nginx:1.7.9
         ports:
         - containerPort: 80
+      

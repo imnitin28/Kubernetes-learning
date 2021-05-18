@@ -5,6 +5,8 @@ metadata:
   labels:
     app: guestbook
     tier: frontend
+  annotations:
+    imageregistry: "https://hub.docker.com/"
 spec:
   replicas: 3
   selector:

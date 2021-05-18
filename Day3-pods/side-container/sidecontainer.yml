@@ -4,6 +4,8 @@ metadata:
   name: foss-app-with-sidecar
   labels:
     app: web
+  annotations:
+    imageregistry: "https://hub.docker.com/"
 
 spec:
   initContainers:

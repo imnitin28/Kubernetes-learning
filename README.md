@@ -1,15 +1,15 @@
 # Kubernetes-learning
 
-# DAY 1
+## DAY 1
 Introduction
 Why & What ?
 Benefits of Kubernetes
 Compare with other container orchestrator engine
 minikube intoduction & setup
 
-# DAY 2
+## DAY 2
 
-# DAY 3
+## DAY 3
 
 ## How to run
 
@@ -29,7 +29,7 @@ kubectl describe po foss-app-with-init
 
 kubectl delete -f initcontainer-nodeapp.yml
 
-# Day 4
+## Day 4
 
 # ReplicationController | ReplicaSet | Deployment
 
@@ -60,6 +60,9 @@ kubectl get rc nginx
 This will show desired and current state with ready as well.
 
 #### ReplicaSet
+<!-- When to use ReplicaSet?
+It is recommend to use Deployments instead of directly using ReplicaSets, unless you require custom update orchestration or don't require updates at all. -->
+
 kubectl apply -f replicaSet-MatchExpression.yml 
 kubectl get pods
 kubectl get rs nginx-rs -o wide
@@ -93,13 +96,12 @@ kubectl set image deploy nginx-deploy nginx-container=nginx:1.9.1
 ###### Way 2
 kubectl edit deploy nginx-deploy
 
-
 What if by mistake we did this nginx-container=nginx:1.91 insted of nginx-container=nginx:1.9.1
 -- It will get stucked
 -- We need to do rollback to previous stable release
 kubectl set image deploy nginx-deploy nginx-container=nginx:1.91
 kubectl set image deploy nginx-deploy nginx-container=nginx:1.91 --record
--- with --record K8s will record this command in its history
+-- with --record K8s will record this command in resource annotation kubernetes.io/change-cause
 
 knoldus@nitin-knoldus:~/Desktop/KubernetesResources/Kubernetes-learning/Day4-Replicas/DocExamples$ kubectl rollout status deployment/nginx-deploy
 Waiting for deployment "nginx-deploy" rollout to finish: 1 out of 3 new replicas have been updated...

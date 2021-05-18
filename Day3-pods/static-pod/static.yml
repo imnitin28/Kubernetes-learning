@@ -11,6 +11,8 @@ metadata:
   labels:
     run: nginx
   name: nginx
+  annotations:
+    imageregistry: "https://hub.docker.com/"
 spec:
   containers:
   - image: nginx

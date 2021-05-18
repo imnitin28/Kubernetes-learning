@@ -15,6 +15,8 @@ metadata:
   name: welcome-pod
   labels:
     app: web
+  annotations:
+    imageregistry: "https://hub.docker.com/"
 
 # Spec is for providing Container specification.
 spec:
