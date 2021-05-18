@@ -16,11 +16,11 @@ spec:
       labels:
         app: nginx-app
     spec:
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxUnavailable: 1
-        maxSurge: 2
+    # strategy:
+    #   type: RollingUpdate
+    #   rollingUpdate:
+    #     maxUnavailable: 1
+    #     maxSurge: 2
       containers:
       - name: nginx-container
         image: nginx:1.7.9

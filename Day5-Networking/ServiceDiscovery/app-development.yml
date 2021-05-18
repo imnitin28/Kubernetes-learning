@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foss-app
+  namespace: development
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: foss-app
+  template:
+    metadata:
+      labels:
+        app: foss-app
+    spec:
+      containers:
+      - name: node-foss-app
+        image: imnitin28/fossimage:1.0
+        ports:
+        - containerPort: 8080
