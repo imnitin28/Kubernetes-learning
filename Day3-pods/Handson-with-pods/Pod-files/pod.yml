@@ -23,6 +23,9 @@ spec:
   containers:
     - name: foss-web
       image: imnitin28/fossimage:1.0
+      env:
+      - name: SIMPLEENV
+        value: some-simple-env-value
       ports:
         - containerPort: 8080
   restartPolicy: Always
