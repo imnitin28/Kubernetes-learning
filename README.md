@@ -119,5 +119,3 @@ kubectl scale deployment nginx-deploy --replicas=1
 kubectl get deploy
 kubectl get po -l app=nginx-app
 
-
-
