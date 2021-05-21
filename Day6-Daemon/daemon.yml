@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon-example
+  namespace: my-name
+  labels:
+    app: foss-web-app
+spec:
+  selector:
+    matchLabels:
+      name: foss-web
+      # pod template
+  template:
+    metadata:
+      labels:
+        name: foss-web
+    spec:
+      containers:
+      - name: foss-web
+        image: imnitin28/fossimage:1.0
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      nodeSelector:
+        newlabel: minilabel
+  
+        

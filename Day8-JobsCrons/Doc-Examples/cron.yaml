@@ -1,0 +1,29 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: mycronjob
+  labels:
+    name: cronjob
+  annotations:
+    purpose: "Create a job that runs every minute to generate a message"
+spec:
+  schedule: "*/1 * * * *"
+  # startingDeadlineSeconds: 20
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; echo Hello guys.
+            - sleep 10
+          restartPolicy: OnFailure
+      completions: 2
+      # parallelism: 2
+  # concurrencyPolicy: Allow
+  

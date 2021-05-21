@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pie
+  labels:
+    app: pie
+  annotations:
+    purpose: "create a job"
+  namespace: jobc
+spec:
+  completions: 4
+  parallelism: 2
+  activeDeadlineSeconds: 240
+  template:
+    metadata:
+      name: pie
+    spec:
+      # never try to restart(Never or Onfailure)
+      restartPolicy: Never
+      containers:
+      - name: pie
+        image: alpine
+        # job command to run
+        command:
+          - "sh"
+          - "-c"
+          - "echo 'scale=1000; 4*a(1)' | bc -l;sleep 2;"
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: pi
+# spec:
+#   template:
+#     spec:
+#       containers:
+#       - name: pi
+#         image: perl
+#         command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+#       restartPolicy: Never
+#   backoffLimit: 4
+

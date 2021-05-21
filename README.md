@@ -120,4 +120,32 @@ kubectl get deploy
 kubectl get po -l app=nginx-app
 
 
+### Commands
+
+###### label the node
+* kubectl label nodes minikube newlabel=minilabel
+
+###### watch
+* watch kubectl get pods -n my-name
+
+###### create
+* kubectl create -f pod.yml -n my-name
+
+###### apply
+* kubectl apply -f pod.yml -n my-name
+
+###### get
+* kubectl get pods -n my-name
+
+###### describe
+* kubectl describe pods mypod -n my-name
+
+###### wide 
+* kubectl get pods -n my-name -o wide
+
+###### delete
+* kubectl delete pods mypod -n my-name
+
+
+
 

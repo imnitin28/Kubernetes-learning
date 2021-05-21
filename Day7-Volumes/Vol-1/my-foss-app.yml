@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-main-app
+  labels:
+    app: main-foss-app
+  annotations:
+    purpose: "A node based app named foss-app"
+  namespace: vs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-foss-app
+  template:
+    metadata:
+      labels:
+        app: main-foss-app
+    spec:
+      containers:
+      - name: my-app
+        image: imnitin28/fossimage:1.0
+        ports:
+        - containerPort: 80
+      volumes:
+        - name: my-main-app
+          persistentVolumeClaim:
+            claimName: pvc
+
+
+

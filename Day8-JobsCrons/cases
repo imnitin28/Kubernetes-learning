@@ -1,0 +1,2 @@
+If a node is down and it can't schedule them, then we can set max number of times it tries to schedule it. (HOW?)
+

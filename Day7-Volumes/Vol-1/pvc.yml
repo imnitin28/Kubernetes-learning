@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc
+  labels:
+    app: pvc-1
+  annotations:
+    purpose: "claim the persitent volume as per pod need"
+  namespace: vs
+spec:
+  storageClassName: manual
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+     requests:
+       storage: 1Gi
+
+# claim

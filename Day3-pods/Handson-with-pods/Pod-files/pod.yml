@@ -12,7 +12,7 @@ kind: Pod
 # | labels -> Just as tags. useful when many Pods running in cluster.
 # | Annotation -> The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels.
 metadata:
-  name: welcome-pod
+  name: welcome-pod-1
   labels:
     app: web
   annotations:
@@ -28,5 +28,7 @@ spec:
         value: some-simple-env-value
       ports:
         - containerPort: 8080
+  nodeSelector:
+    newlabel: minilabel
   restartPolicy: Always
 

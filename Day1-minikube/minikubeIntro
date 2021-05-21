@@ -1,3 +1,4 @@
 1. minikube Installation.
 2. Drivers in minikube
 3. Increase RAM of minikube.
+minikube start --memory 5120 --cpus=4

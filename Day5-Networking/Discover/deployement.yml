@@ -16,14 +16,13 @@ spec:
       labels:
         app: nginx-app
     spec:
-    # strategy:
-    #   type: RollingUpdate
-    #   rollingUpdate:
-    #     maxUnavailable: 1
-    #     maxSurge: 2
       containers:
       - name: nginx-container
         image: nginx:1.7.9
+        command:
+        - /bin/sh
+        - -c
+        - echo Hi
         ports:
         - containerPort: 80
       

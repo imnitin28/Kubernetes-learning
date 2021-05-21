@@ -1,0 +1,36 @@
+# apiVersion: apps/v1
+# kind: Service
+# metadata:
+#   name: nginx
+#   labels:
+#     app: nginx
+# spec:
+#   selector:
+#     app: nginx
+#   ports:
+#     port: 80
+#     name: web
+# ---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: database
+  labels:
+    name: web-nginx
+spec:
+  selector:
+    matchLabels:
+      app: foss-web
+  serviceName: "foss-web"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: foss-web
+    spec:
+      containers:
+      - name: foss-web
+        image: foss-web
+        ports:
+        - containerPort: 80
+    
