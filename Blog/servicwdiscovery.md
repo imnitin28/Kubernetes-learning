@@ -18,8 +18,8 @@ understanding dns name for your pod.
 IP.podname.namespace.service.cluster.local
 #####
 
-#####
-Scenario-0
+## Scenario-0
+
 check ENV variable to discover running services.
 run deployment
 run service
@@ -33,20 +33,18 @@ get pods
 exec to pod
 printenv
  ---- observe the ENV variable.
-#####
 
-#####
-Scenario-1 
+## Scenario-1 
+
 Namespace | N1 | N2
 POD       | POD1 | discover that pod here.
 
 kubectl run curl --image=radial/busyboxplus:curl -i --tty -n discovery
 nslookup my-cluster-service 
 
-#####
 
-#####
-Scenario-2
+## Scenario-2
+
 Namespace | N1 | N2 |
 POD       |pod1|pod2|
 ping from pod1 to pod2
@@ -56,6 +54,3 @@ kubectl run curl --image=radial/busyboxplus:curl -i --tty -n discovery
 nslookup IP-Pod1 
 IP.podname.namespace.service.cluster.local
 172-17-0-4.welcome-pod.default.svc.cluster.local
-
-#####
-
