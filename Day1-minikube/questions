@@ -132,3 +132,9 @@ OnFailure means that the container will only be restarted if it exited with a no
 Never means that the container will not be restarted regardless of why it exited. 
 
 2. 
+
+## Day 8 - Jobs and Cronjobs
+
+completion mode
+backoffLimit usage and implementation.
+cron-format for scheduled job from monday to friday at 9:30am.
